@@ -1,22 +1,16 @@
-giros_crud
-giros_crud.exe
-giros_crud.exe~
-./giros_crud
-./giros_crud.exe
-lastupdate.tmp
-.vscode/
-main
-ejec.sh
+# Binarios y Temporales
+*.exe
+giros_crud*
+main*
+*.tmp
 .scannerwork/
-swagger/*.png
-swagger/*.html
-swagger/*.js
-swagger/*.map
-swagger/*.css
-swagger/*.yml
-swagger/css/
-swagger/fonts/
-swagger/images/
-swagger/lang/
-swagger/lib/
+
+# IDEs
+.vscode
+
+# Otros
+ejec.sh
+swagger/**
+!swagger/swagger.json
+!swagger/swagger.yml
 swagger.zip

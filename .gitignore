@@ -5,6 +5,10 @@ main*
 *.tmp
 .scannerwork/
 
+# Variables de Entorno
+*.env
+!template.env
+
 # IDEs
 .vscode
 

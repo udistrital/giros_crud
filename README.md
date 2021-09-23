@@ -5,14 +5,15 @@ El API giros_crud, proporciona interfaces para la manipulación(CRUD) de los dat
 ## Especificaciones Técnicas
 
 ### Tecnologías Implementadas y Versiones
+
 * [Golang](https://github.com/udistrital/introduccion_oas/blob/master/instalacion_de_herramientas/golang.md)
 * [BeeGo](https://github.com/udistrital/introduccion_oas/blob/master/instalacion_de_herramientas/beego.md)
 * [Postgres](https://github.com/udistrital/lineamientos_oas/blob/master/instalacion_de_herramientas/postgres.md)
 * [Docker](https://docs.docker.com/engine/install/ubuntu/)
 * [Docker Compose](https://docs.docker.com/compose/)
 
-
 ### Variables de Entorno
+
 ```shell
 # Ejemplo que se debe actualizar acorde al proyecto
       - GIROS_CRUD_HTTP_PORT=[Puerto asignado para la ejecución del API]
@@ -32,10 +33,11 @@ El API giros_crud, proporciona interfaces para la manipulación(CRUD) de los dat
       - GIROS_CRUD_PGDB=giros_db
       - GIROS_CRUD_PGSCHEMA=giros
 ```
+
 **NOTA:** Las variables se pueden ver en el fichero conf/app.conf y están identificadas con GIROS_CRUD_...
 
-
 ### Ejecución del Proyecto
+
 ```shell
 #1. Obtener el repositorio con Go
 go get github.com/udistrital/giros_crud
@@ -51,11 +53,13 @@ GIROS_CRUD_HTTP_PORT=8080 GIROS_CRUD_PGURL=127.0.0.1 GIROS_CRUD_SOME_VARIABLE=so
 ```
 
 ### Ejecución Dockerfile
+
 ```shell
 # Implementado para despliegue del Sistema de integración continua CI.
 ```
 
 ### Ejecución docker-compose
+
 ```shell
 #1. Clonar el repositorio
 git clone -b develop https://github.com/udistrital/giros_crud
@@ -79,21 +83,23 @@ docker ps
 ### Ejecución Pruebas
 
 Pruebas unitarias
+
 ```shell
 # Not Data
 ```
 
 ## Modelo de datos
+
 [Mode Relacional giros_crud](database/Modelo_giros.png)
 
-
 ## Estado CI
-| Develop | Relese  | Master |
-| -- | -- | -- |
-| [![Build Status](https://hubci.portaloas.udistrital.edu.co/api/badges/udistrital/giros_crud/status.svg?ref=refs/heads/develop)](https://hubci.portaloas.udistrital.edu.co/udistrital/giros_crud) | [![Build Status](https://hubci.portaloas.udistrital.edu.co/api/badges/udistrital/giros_crud/status.svg?ref=refs/heads/release/0.0.1)](https://hubci.portaloas.udistrital.edu.co/udistrital/giros_crud) | [![Build Status](https://hubci.portaloas.udistrital.edu.co/api/badges/udistrital/giros_crud/status.svg)](https://hubci.portaloas.udistrital.edu.co/udistrital/giros_crud) |
 
+| Develop | Release | Master |
+| -- | -- | -- |
+| [![Build Status](https://hubci.portaloas.udistrital.edu.co/api/badges/udistrital/giros_crud/status.svg?ref=refs/heads/develop)](https://hubci.portaloas.udistrital.edu.co/udistrital/giros_crud) | [![Build Status](https://hubci.portaloas.udistrital.edu.co/api/badges/udistrital/giros_crud/status.svg?ref=refs/heads/release)](https://hubci.portaloas.udistrital.edu.co/udistrital/giros_crud) | [![Build Status](https://hubci.portaloas.udistrital.edu.co/api/badges/udistrital/giros_crud/status.svg?ref=refs/heads/master)](https://hubci.portaloas.udistrital.edu.co/udistrital/giros_crud) |
 
 ## Licencia
+
 This file is part of giros_crud
 
 giros_crud is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.

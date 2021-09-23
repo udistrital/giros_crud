@@ -7,8 +7,6 @@ lastupdate.tmp
 .vscode/
 main
 ejec.sh
-go.mod
-go.sum
 .scannerwork/
 swagger/*.png
 swagger/*.html

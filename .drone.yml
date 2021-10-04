@@ -1,14 +1,3 @@
-# Posiblemente esta seccion se pueda eliminar, teniendo
-# en cuenta la existencia de los go.mod/sum
-workspace:
-  base: /go
-  path: src/github.com/udistrital/${DRONE_REPO##udistrital/}
-  when:
-      branch:
-      - develop
-      - release/*
-      - master
-
 trigger:
   event:
     exclude:
@@ -18,6 +7,16 @@ kind: pipeline
 name: oas_api_ci
 
 steps:
+- name: check_env
+  image: alpine
+  commands:
+    - source .scripts.sh
+    - checkEnvMode
+  # when:
+  #   branch:
+  #   - release/*
+  #   - master
+
 - name: check_readme
   failure: ignore
   image: jjvargass/qa_develoment:latest
@@ -27,7 +26,7 @@ steps:
     branch:
     - develop
     - feature/*
-    - release
+    - release/*
     event:
     - push
 
@@ -40,7 +39,7 @@ steps:
     branch:
     - develop
     - feature/*
-    - release
+    - release/*
     event:
     - push
 
@@ -53,7 +52,7 @@ steps:
     branch:
     - develop
     - feature/*
-    - release
+    - release/*
     event:
     - push
 
@@ -73,6 +72,7 @@ steps:
     - push
 
 - name: go_run_test
+  failure: ignore
   image: golang:1.14
   commands:
   - go get -t
@@ -90,6 +90,7 @@ steps:
     - develop
     - feature/*
     - master
+    - release/*
     event:
     - push
 
@@ -100,6 +101,13 @@ steps:
       from_secret: SONAR_HOST
     sonar_token:
       from_secret: SONAR_TOKEN
+  when:
+    branch:
+    - develop
+    - master
+    - release/*
+    event:
+    - push
 
 - name: beego_migrate
   image: golang:1.14
@@ -253,32 +261,3 @@ steps:
     status:
     - failure
     - success
-
-# - name: notify_slack
-#   image: plugins/slack
-#   settings:
-#     webhook:
-#       from_secret: slack_webhook
-#     channel: deploy
-#     template: >
-#       {{#success build.status}}
-#         :heavy_check_mark:  <{{ build.link }}|SUCCESS> Build #{{build.number}}
-#         type: {{ build.event }} - Repo: {{repo.name}}
-#         Commit: <https://github.com/{{ repo.owner }}/{{ repo.name }}/commit/{{ build.commit }}|{{ truncate build.commit 8 }}>
-#         Branch: {{build.branch}} - Autor: {{build.author}}  :sunglasses:
-#       {{else}}
-#         :x: <{{ build.link }}|FAILURE> Build #{{build.number}}
-#         type: {{ build.event }} - Repo: {{repo.name}}
-#         Branch: {{build.branch}} - Autor: {{build.author}} :weary:
-#         Commit: <https://github.com/{{ repo.owner }}/{{ repo.name }}/commit/{{ build.commit }}|{{ truncate build.commit 8 }}>
-#       {{/success}}
-#   when:
-#     branch:
-#     - develop
-#     - release/*
-#     - master
-#     event:
-#     - push
-#     status:
-#     - failure
-#     - success

@@ -1,0 +1,1430 @@
+swagger: "2.0"
+info:
+  title: beego Test API
+  description: beego has a very cool tools to autogenerate documents for your API
+  version: 1.0.0
+  termsOfService: http://beego.me/
+  contact:
+    email: astaxie@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+basePath: /v1
+paths:
+  /cuenta_bancaria/:
+    get:
+      tags:
+      - cuenta_bancaria
+      description: get CuentaBancaria
+      operationId: CuentaBancariaController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.CuentaBancaria'
+        "404":
+          description: not found resource
+    post:
+      tags:
+      - cuenta_bancaria
+      description: create CuentaBancaria
+      operationId: CuentaBancariaController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for CuentaBancaria content
+        required: true
+        schema:
+          $ref: '#/definitions/models.CuentaBancaria'
+      responses:
+        "201":
+          description: '{int} models.CuentaBancaria'
+        "400":
+          description: the request contains incorrect syntax
+  /cuenta_bancaria/{id}:
+    get:
+      tags:
+      - cuenta_bancaria
+      description: get CuentaBancaria by id
+      operationId: CuentaBancariaController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.CuentaBancaria'
+        "404":
+          description: not found resource
+    put:
+      tags:
+      - cuenta_bancaria
+      description: update the CuentaBancaria
+      operationId: CuentaBancariaController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for CuentaBancaria content
+        required: true
+        schema:
+          $ref: '#/definitions/models.CuentaBancaria'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.CuentaBancaria'
+        "400":
+          description: the request contains incorrect syntax
+    delete:
+      tags:
+      - cuenta_bancaria
+      description: delete the CuentaBancaria
+      operationId: CuentaBancariaController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "404":
+          description: not found resource
+  /forma_pago/:
+    get:
+      tags:
+      - forma_pago
+      description: get FormaPago
+      operationId: FormaPagoController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.FormaPago'
+        "404":
+          description: not found resource
+    post:
+      tags:
+      - forma_pago
+      description: create FormaPago
+      operationId: FormaPagoController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for FormaPago content
+        required: true
+        schema:
+          $ref: '#/definitions/models.FormaPago'
+      responses:
+        "201":
+          description: '{int} models.FormaPago'
+        "400":
+          description: the request contains incorrect syntax
+  /forma_pago/{id}:
+    get:
+      tags:
+      - forma_pago
+      description: get FormaPago by id
+      operationId: FormaPagoController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.FormaPago'
+        "404":
+          description: not found resource
+    put:
+      tags:
+      - forma_pago
+      description: update the FormaPago
+      operationId: FormaPagoController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for FormaPago content
+        required: true
+        schema:
+          $ref: '#/definitions/models.FormaPago'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.FormaPago'
+        "400":
+          description: the request contains incorrect syntax
+    delete:
+      tags:
+      - forma_pago
+      description: delete the FormaPago
+      operationId: FormaPagoController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "404":
+          description: not found resource
+  /giro/:
+    get:
+      tags:
+      - giro
+      description: get Giro
+      operationId: GiroController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Giro'
+        "404":
+          description: not found resource
+    post:
+      tags:
+      - giro
+      description: create Giro
+      operationId: GiroController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for Giro content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Giro'
+      responses:
+        "201":
+          description: '{int} models.Giro'
+        "400":
+          description: the request contains incorrect syntax
+  /giro/{id}:
+    get:
+      tags:
+      - giro
+      description: get Giro by id
+      operationId: GiroController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Giro'
+        "404":
+          description: not found resource
+    put:
+      tags:
+      - giro
+      description: update the Giro
+      operationId: GiroController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Giro content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Giro'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.Giro'
+        "400":
+          description: the request contains incorrect syntax
+    delete:
+      tags:
+      - giro
+      description: delete the Giro
+      operationId: GiroController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "404":
+          description: not found resource
+  /giro_contabilizacion/:
+    get:
+      tags:
+      - giro_contabilizacion
+      description: get GiroContabilizacion
+      operationId: GiroContabilizacionController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GiroContabilizacion'
+        "404":
+          description: not found resource
+    post:
+      tags:
+      - giro_contabilizacion
+      description: create GiroContabilizacion
+      operationId: GiroContabilizacionController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for GiroContabilizacion content
+        required: true
+        schema:
+          $ref: '#/definitions/models.GiroContabilizacion'
+      responses:
+        "201":
+          description: '{int} models.GiroContabilizacion'
+        "400":
+          description: the request contains incorrect syntax
+  /giro_contabilizacion/{id}:
+    get:
+      tags:
+      - giro_contabilizacion
+      description: get GiroContabilizacion by id
+      operationId: GiroContabilizacionController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GiroContabilizacion'
+        "404":
+          description: not found resource
+    put:
+      tags:
+      - giro_contabilizacion
+      description: update the GiroContabilizacion
+      operationId: GiroContabilizacionController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for GiroContabilizacion content
+        required: true
+        schema:
+          $ref: '#/definitions/models.GiroContabilizacion'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GiroContabilizacion'
+        "400":
+          description: the request contains incorrect syntax
+    delete:
+      tags:
+      - giro_contabilizacion
+      description: delete the GiroContabilizacion
+      operationId: GiroContabilizacionController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "404":
+          description: not found resource
+  /giro_estado/:
+    get:
+      tags:
+      - giro_estado
+      description: get GiroEstado
+      operationId: GiroEstadoController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GiroEstado'
+        "404":
+          description: not found resource
+    post:
+      tags:
+      - giro_estado
+      description: create GiroEstado
+      operationId: GiroEstadoController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for GiroEstado content
+        required: true
+        schema:
+          $ref: '#/definitions/models.GiroEstado'
+      responses:
+        "201":
+          description: '{int} models.GiroEstado'
+        "400":
+          description: the request contains incorrect syntax
+  /giro_estado/{id}:
+    get:
+      tags:
+      - giro_estado
+      description: get GiroEstado by id
+      operationId: GiroEstadoController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GiroEstado'
+        "404":
+          description: not found resource
+    put:
+      tags:
+      - giro_estado
+      description: update the GiroEstado
+      operationId: GiroEstadoController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for GiroEstado content
+        required: true
+        schema:
+          $ref: '#/definitions/models.GiroEstado'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GiroEstado'
+        "400":
+          description: the request contains incorrect syntax
+    delete:
+      tags:
+      - giro_estado
+      description: delete the GiroEstado
+      operationId: GiroEstadoController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "404":
+          description: not found resource
+  /giro_orden_pago_detalle/:
+    get:
+      tags:
+      - giro_orden_pago_detalle
+      description: get GiroOrdenPagoDetalle
+      operationId: GiroOrdenPagoDetalleController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GiroOrdenPagoDetalle'
+        "404":
+          description: not found resource
+    post:
+      tags:
+      - giro_orden_pago_detalle
+      description: create GiroOrdenPagoDetalle
+      operationId: GiroOrdenPagoDetalleController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for GiroOrdenPagoDetalle content
+        required: true
+        schema:
+          $ref: '#/definitions/models.GiroOrdenPagoDetalle'
+      responses:
+        "201":
+          description: '{int} models.GiroOrdenPagoDetalle'
+        "400":
+          description: the request contains incorrect syntax
+  /giro_orden_pago_detalle/{id}:
+    get:
+      tags:
+      - giro_orden_pago_detalle
+      description: get GiroOrdenPagoDetalle by id
+      operationId: GiroOrdenPagoDetalleController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GiroOrdenPagoDetalle'
+        "404":
+          description: not found resource
+    put:
+      tags:
+      - giro_orden_pago_detalle
+      description: update the GiroOrdenPagoDetalle
+      operationId: GiroOrdenPagoDetalleController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for GiroOrdenPagoDetalle content
+        required: true
+        schema:
+          $ref: '#/definitions/models.GiroOrdenPagoDetalle'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GiroOrdenPagoDetalle'
+        "400":
+          description: the request contains incorrect syntax
+    delete:
+      tags:
+      - giro_orden_pago_detalle
+      description: delete the GiroOrdenPagoDetalle
+      operationId: GiroOrdenPagoDetalleController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "404":
+          description: not found resource
+  /giro_reversar/:
+    get:
+      tags:
+      - giro_reversar
+      description: get GiroReversar
+      operationId: GiroReversarController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GiroReversar'
+        "404":
+          description: not found resource
+    post:
+      tags:
+      - giro_reversar
+      description: create GiroReversar
+      operationId: GiroReversarController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for GiroReversar content
+        required: true
+        schema:
+          $ref: '#/definitions/models.GiroReversar'
+      responses:
+        "201":
+          description: '{int} models.GiroReversar'
+        "400":
+          description: the request contains incorrect syntax
+  /giro_reversar/{id}:
+    get:
+      tags:
+      - giro_reversar
+      description: get GiroReversar by id
+      operationId: GiroReversarController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GiroReversar'
+        "404":
+          description: not found resource
+    put:
+      tags:
+      - giro_reversar
+      description: update the GiroReversar
+      operationId: GiroReversarController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for GiroReversar content
+        required: true
+        schema:
+          $ref: '#/definitions/models.GiroReversar'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.GiroReversar'
+        "400":
+          description: the request contains incorrect syntax
+    delete:
+      tags:
+      - giro_reversar
+      description: delete the GiroReversar
+      operationId: GiroReversarController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "404":
+          description: not found resource
+  /orden_devolucion_detalle/:
+    get:
+      tags:
+      - orden_devolucion_detalle
+      description: get OrdenDevolucionDetalle
+      operationId: OrdenDevolucionDetalleController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.OrdenDevolucionDetalle'
+        "404":
+          description: not found resource
+    post:
+      tags:
+      - orden_devolucion_detalle
+      description: create OrdenDevolucionDetalle
+      operationId: OrdenDevolucionDetalleController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for OrdenDevolucionDetalle content
+        required: true
+        schema:
+          $ref: '#/definitions/models.OrdenDevolucionDetalle'
+      responses:
+        "201":
+          description: '{int} models.OrdenDevolucionDetalle'
+        "400":
+          description: the request contains incorrect syntax
+  /orden_devolucion_detalle/{id}:
+    get:
+      tags:
+      - orden_devolucion_detalle
+      description: get OrdenDevolucionDetalle by id
+      operationId: OrdenDevolucionDetalleController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.OrdenDevolucionDetalle'
+        "404":
+          description: not found resource
+    put:
+      tags:
+      - orden_devolucion_detalle
+      description: update the OrdenDevolucionDetalle
+      operationId: OrdenDevolucionDetalleController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for OrdenDevolucionDetalle content
+        required: true
+        schema:
+          $ref: '#/definitions/models.OrdenDevolucionDetalle'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.OrdenDevolucionDetalle'
+        "400":
+          description: the request contains incorrect syntax
+    delete:
+      tags:
+      - orden_devolucion_detalle
+      description: delete the OrdenDevolucionDetalle
+      operationId: OrdenDevolucionDetalleController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "404":
+          description: not found resource
+  /relacion_autorizacion_detalle/:
+    get:
+      tags:
+      - relacion_autorizacion_detalle
+      description: get RelacionAutorizacionDetalle
+      operationId: RelacionAutorizacionDetalleController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.RelacionAutorizacionDetalle'
+        "404":
+          description: not found resource
+    post:
+      tags:
+      - relacion_autorizacion_detalle
+      description: create RelacionAutorizacionDetalle
+      operationId: RelacionAutorizacionDetalleController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for RelacionAutorizacionDetalle content
+        required: true
+        schema:
+          $ref: '#/definitions/models.RelacionAutorizacionDetalle'
+      responses:
+        "201":
+          description: '{int} models.RelacionAutorizacionDetalle'
+        "400":
+          description: the request contains incorrect syntax
+  /relacion_autorizacion_detalle/{id}:
+    get:
+      tags:
+      - relacion_autorizacion_detalle
+      description: get RelacionAutorizacionDetalle by id
+      operationId: RelacionAutorizacionDetalleController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.RelacionAutorizacionDetalle'
+        "404":
+          description: not found resource
+    put:
+      tags:
+      - relacion_autorizacion_detalle
+      description: update the RelacionAutorizacionDetalle
+      operationId: RelacionAutorizacionDetalleController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for RelacionAutorizacionDetalle content
+        required: true
+        schema:
+          $ref: '#/definitions/models.RelacionAutorizacionDetalle'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.RelacionAutorizacionDetalle'
+        "400":
+          description: the request contains incorrect syntax
+    delete:
+      tags:
+      - relacion_autorizacion_detalle
+      description: delete the RelacionAutorizacionDetalle
+      operationId: RelacionAutorizacionDetalleController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "404":
+          description: not found resource
+  /retiro_beneficiario_giro/:
+    get:
+      tags:
+      - retiro_beneficiario_giro
+      description: get RetiroBeneficiarioGiro
+      operationId: RetiroBeneficiarioGiroController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.RetiroBeneficiarioGiro'
+        "404":
+          description: not found resource
+    post:
+      tags:
+      - retiro_beneficiario_giro
+      description: create RetiroBeneficiarioGiro
+      operationId: RetiroBeneficiarioGiroController.Post
+      parameters:
+      - in: body
+        name: body
+        description: body for RetiroBeneficiarioGiro content
+        required: true
+        schema:
+          $ref: '#/definitions/models.RetiroBeneficiarioGiro'
+      responses:
+        "201":
+          description: '{int} models.RetiroBeneficiarioGiro'
+        "400":
+          description: the request contains incorrect syntax
+  /retiro_beneficiario_giro/{id}:
+    get:
+      tags:
+      - retiro_beneficiario_giro
+      description: get RetiroBeneficiarioGiro by id
+      operationId: RetiroBeneficiarioGiroController.Get One
+      parameters:
+      - in: path
+        name: id
+        description: The key for staticblock
+        required: true
+        type: string
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.RetiroBeneficiarioGiro'
+        "404":
+          description: not found resource
+    put:
+      tags:
+      - retiro_beneficiario_giro
+      description: update the RetiroBeneficiarioGiro
+      operationId: RetiroBeneficiarioGiroController.Put
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for RetiroBeneficiarioGiro content
+        required: true
+        schema:
+          $ref: '#/definitions/models.RetiroBeneficiarioGiro'
+      responses:
+        "200":
+          description: ""
+          schema:
+            $ref: '#/definitions/models.RetiroBeneficiarioGiro'
+        "400":
+          description: the request contains incorrect syntax
+    delete:
+      tags:
+      - retiro_beneficiario_giro
+      description: delete the RetiroBeneficiarioGiro
+      operationId: RetiroBeneficiarioGiroController.Delete
+      parameters:
+      - in: path
+        name: id
+        description: The id you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "404":
+          description: not found resource
+definitions:
+  models.CuentaBancaria:
+    title: CuentaBancaria
+    type: object
+    properties:
+      Activo:
+        type: boolean
+      BancoId:
+        type: integer
+        format: int64
+      FechaCreacion:
+        type: string
+      FechaModificacion:
+        type: string
+      Id:
+        type: integer
+        format: int64
+      NombreId:
+        type: integer
+        format: int64
+      NumeroCuenta:
+        type: integer
+        format: int64
+      TipoCuenta:
+        type: integer
+        format: int64
+  models.FormaPago:
+    title: FormaPago
+    type: object
+    properties:
+      Activo:
+        type: boolean
+      FechaCreacion:
+        type: string
+      FechaModificacion:
+        type: string
+      FormaPagoId:
+        type: integer
+        format: int64
+      Id:
+        type: integer
+        format: int64
+      NumeroOrden:
+        type: number
+        format: double
+  models.Giro:
+    title: Giro
+    type: object
+    properties:
+      Activo:
+        type: boolean
+      AreaFuncional:
+        type: integer
+        format: int64
+      CuentaBancariaId:
+        $ref: '#/definitions/models.CuentaBancaria'
+      FechaCreacion:
+        type: string
+      FechaModificacion:
+        type: string
+      FormaPagoId:
+        $ref: '#/definitions/models.FormaPago'
+      Id:
+        type: integer
+        format: int64
+      NumeroSeleccion:
+        type: integer
+        format: int64
+      TipoDocumentoId:
+        type: integer
+        format: int64
+      TipoGiroId:
+        type: integer
+        format: int64
+      ValorTotal:
+        type: number
+        format: double
+      Vigencia:
+        type: integer
+        format: int64
+  models.GiroContabilizacion:
+    title: GiroContabilizacion
+    type: object
+    properties:
+      Activo:
+        type: boolean
+      Codigo:
+        type: integer
+        format: int64
+      Concepto:
+        type: string
+      FechaCreacion:
+        type: string
+      FechaModificacion:
+        type: string
+      GiroId:
+        $ref: '#/definitions/models.Giro'
+      Id:
+        type: integer
+        format: int64
+      TipoComprobante:
+        type: integer
+        format: int64
+  models.GiroEstado:
+    title: GiroEstado
+    type: object
+    properties:
+      Activo:
+        type: boolean
+      EstadoGiroId:
+        type: integer
+        format: int64
+      FechaCreacion:
+        type: string
+      FechaModificacion:
+        type: string
+      GiroId:
+        $ref: '#/definitions/models.Giro'
+      Id:
+        type: integer
+        format: int64
+      Observaciones:
+        type: string
+      Responsable:
+        type: integer
+        format: int64
+  models.GiroOrdenPagoDetalle:
+    title: GiroOrdenPagoDetalle
+    type: object
+    properties:
+      Activo:
+        type: boolean
+      FechaCreacion:
+        type: string
+      FechaModificacion:
+        type: string
+      GiroId:
+        $ref: '#/definitions/models.Giro'
+      Id:
+        type: integer
+        format: int64
+      OdenPagoId:
+        type: integer
+        format: int64
+      Vigencia:
+        type: integer
+        format: int64
+  models.GiroReversar:
+    title: GiroReversar
+    type: object
+    properties:
+      Activo:
+        type: boolean
+      FechaCreacion:
+        type: string
+      FechaModificacion:
+        type: string
+      GiroId:
+        $ref: '#/definitions/models.Giro'
+      Id:
+        type: integer
+        format: int64
+      Observaciones:
+        type: string
+      Responsable:
+        type: integer
+        format: int64
+  models.OrdenDevolucionDetalle:
+    title: OrdenDevolucionDetalle
+    type: object
+    properties:
+      Activo:
+        type: boolean
+      FechaCreacion:
+        type: string
+      FechaModificacion:
+        type: string
+      GiroId:
+        $ref: '#/definitions/models.Giro'
+      Id:
+        type: integer
+        format: int64
+      OrdenDevolucionId:
+        type: integer
+        format: int64
+      Vigencia:
+        type: integer
+        format: int64
+  models.RelacionAutorizacionDetalle:
+    title: RelacionAutorizacionDetalle
+    type: object
+    properties:
+      Activo:
+        type: boolean
+      FechaCreacion:
+        type: string
+      FechaModificacion:
+        type: string
+      GiroId:
+        $ref: '#/definitions/models.Giro'
+      Id:
+        type: integer
+        format: int64
+      RelacionAutorizacionId:
+        type: integer
+        format: int64
+      Vigencia:
+        type: integer
+        format: int64
+  models.RetiroBeneficiarioGiro:
+    title: RetiroBeneficiarioGiro
+    type: object
+    properties:
+      Activo:
+        type: boolean
+      Consecutivo:
+        type: integer
+        format: int64
+      DocumentoBeneficiario:
+        type: integer
+        format: int64
+      FechaCreacion:
+        type: string
+      FechaModificacion:
+        type: string
+      GiroId:
+        $ref: '#/definitions/models.Giro'
+      Id:
+        type: integer
+        format: int64
+      Observaciones:
+        type: integer
+        format: int64
+      TipoDocumentoBeneficiario:
+        type: integer
+        format: int64
+tags:
+- name: cuenta_bancaria
+  description: |
+    CuentaBancariaController operations for CuentaBancaria
+- name: giro
+  description: |
+    GiroController operations for Giro
+- name: forma_pago
+  description: |
+    FormaPagoController operations for FormaPago
+- name: orden_devolucion_detalle
+  description: |
+    OrdenDevolucionDetalleController operations for OrdenDevolucionDetalle
+- name: giro_orden_pago_detalle
+  description: |
+    GiroOrdenPagoDetalleController operations for GiroOrdenPagoDetalle
+- name: giro_reversar
+  description: |
+    GiroReversarController operations for GiroReversar
+- name: relacion_autorizacion_detalle
+  description: |
+    RelacionAutorizacionDetalleController operations for RelacionAutorizacionDetalle
+- name: giro_contabilizacion
+  description: |
+    GiroContabilizacionController operations for GiroContabilizacion
+- name: giro_estado
+  description: |
+    GiroEstadoController operations for GiroEstado
+- name: retiro_beneficiario_giro
+  description: |
+    RetiroBeneficiarioGiroController operations for RetiroBeneficiarioGiro

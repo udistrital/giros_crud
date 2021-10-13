@@ -1754,10 +1754,6 @@
                 "Activo": {
                     "type": "boolean"
                 },
-                "BancoId": {
-                    "type": "integer",
-                    "format": "int64"
-                },
                 "FechaCreacion": {
                     "type": "string"
                 },
@@ -1773,6 +1769,10 @@
                     "format": "int64"
                 },
                 "NumeroCuenta": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "SucursalId": {
                     "type": "integer",
                     "format": "int64"
                 },

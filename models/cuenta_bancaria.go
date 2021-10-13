@@ -14,7 +14,7 @@ type CuentaBancaria struct {
 	Id                int    `orm:"column(id);pk;auto"`
 	NombreId          int    `orm:"column(nombre_id)"`
 	NumeroCuenta      int    `orm:"column(numero_cuenta)"`
-	BancoId           int    `orm:"column(banco_id)"`
+	SucursalId        int    `orm:"column(sucursal_id)"`
 	TipoCuenta        int    `orm:"column(tipo_cuenta)"`
 	Activo            bool   `orm:"column(activo)"`
 	FechaCreacion     string `orm:"column(fecha_creacion);type(timestamp without time zone)"`

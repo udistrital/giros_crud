@@ -50,7 +50,7 @@ func (m *ActualizarCuentaBancaria_20211013_155612) Down() {
 		fmt.Println(err)
 	}
 
-	requests := strings.Split(string(file), ";")
+	requests := strings.Split(string(file), ";\n")
 
 	for _, request := range requests {
 		fmt.Println(request)

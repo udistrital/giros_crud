@@ -31,7 +31,7 @@ func (m *CreacionTablasGiros_20210301_140159) Up() {
 		fmt.Println(err)
 	}
 
-	requests := strings.Split(string(file), ";")
+	requests := strings.Split(string(file), ";\n")
 
 	for _, request := range requests {
 		fmt.Println(request)
@@ -51,7 +51,7 @@ func (m *CreacionTablasGiros_20210301_140159) Down() {
 		fmt.Println(err)
 	}
 
-	requests := strings.Split(string(file), ";")
+	requests := strings.Split(string(file), ";\n")
 
 	for _, request := range requests {
 		fmt.Println(request)

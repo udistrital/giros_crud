@@ -1168,9 +1168,6 @@ definitions:
     properties:
       Activo:
         type: boolean
-      BancoId:
-        type: integer
-        format: int64
       FechaCreacion:
         type: string
       FechaModificacion:
@@ -1182,6 +1179,9 @@ definitions:
         type: integer
         format: int64
       NumeroCuenta:
+        type: integer
+        format: int64
+      SucursalId:
         type: integer
         format: int64
       TipoCuenta:

@@ -12,13 +12,19 @@ import (
 // CuentaBancaria ...
 type CuentaBancaria struct {
 	Id                int    `orm:"column(id);pk;auto"`
-	NombreId          int    `orm:"column(nombre_id)"`
+	NombreCuenta      int    `orm:"column(nombre_cuenta)"`
 	NumeroCuenta      int    `orm:"column(numero_cuenta)"`
 	SucursalId        int    `orm:"column(sucursal_id)"`
-	TipoCuenta        int    `orm:"column(tipo_cuenta)"`
+	TipoCuentaId      int    `orm:"column(tipo_cuenta_id)"`
 	Activo            bool   `orm:"column(activo)"`
 	FechaCreacion     string `orm:"column(fecha_creacion);type(timestamp without time zone)"`
 	FechaModificacion string `orm:"column(fecha_modificacion);type(timestamp without time zone)"`
+	Pagadora		  bool   `orm:"column(pagadora)"`
+	Recaudadora		  bool   `orm:"column(recaudadora)"`
+	CuatroPorMil	  bool   `orm:"column(cuatro_por_mil)"`
+	RecursoId		  string `orm:"column(recurso_id)"`
+	AreaFuncional	  int	 `orm:"column(area_funcional)"`
+	DivisaId		  int	 `orm:"column(divisa_id)"`
 }
 
 // TableName ...

@@ -90,7 +90,8 @@ Pruebas unitarias
 
 ## Modelo de datos
 
-[Mode Relacional giros_crud](database/Modelo_giros.svg)
+[Mode Relacional giros_crud](database/Modelo_giros.svg) -
+ [PGmodeler](database/modelo_giros_crud.dbm)
 
 ## Estado CI
 

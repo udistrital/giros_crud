@@ -24,7 +24,7 @@ func init() {
 // Run the migrations
 func (m *ActualizarCuentaBancariaV2_20211108_115424) Up() {
 	// use m.SQL("CREATE TABLE ...") to make schema update
-	file, err := ioutil.ReadFile("../scripts/giros_update_cuenta_bancaria_up.sql")
+	file, err := ioutil.ReadFile("../scripts/20211108_115424_actualizar_cuenta_bancaria_v2_up.sql")
 
 	if err != nil {
 		// handle error
@@ -43,7 +43,7 @@ func (m *ActualizarCuentaBancariaV2_20211108_115424) Up() {
 // Reverse the migrations
 func (m *ActualizarCuentaBancariaV2_20211108_115424) Down() {
 	// use m.SQL("DROP TABLE ...") to reverse schema update
-	file, err := ioutil.ReadFile("../scripts/giros_update_cuenta_bancaria_down.sql")
+	file, err := ioutil.ReadFile("../scripts/20211108_115424_actualizar_cuenta_bancaria_v2_down.sql")
 
 	if err != nil {
 		// handle error

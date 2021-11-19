@@ -1168,6 +1168,14 @@ definitions:
     properties:
       Activo:
         type: boolean
+      AreaFuncional:
+        type: integer
+        format: int64
+      CuatroPorMil:
+        type: boolean
+      DivisaId:
+        type: integer
+        format: int64
       FechaCreacion:
         type: string
       FechaModificacion:
@@ -1175,16 +1183,22 @@ definitions:
       Id:
         type: integer
         format: int64
-      NombreId:
+      NombreCuenta:
         type: integer
         format: int64
       NumeroCuenta:
         type: integer
         format: int64
+      Pagadora:
+        type: boolean
+      Recaudadora:
+        type: boolean
+      RecursoId:
+        type: string
       SucursalId:
         type: integer
         format: int64
-      TipoCuenta:
+      TipoCuentaId:
         type: integer
         format: int64
   models.FormaPago:

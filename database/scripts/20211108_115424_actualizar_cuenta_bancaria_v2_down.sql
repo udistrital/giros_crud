@@ -56,4 +56,3 @@ BEGIN
       ALTER TABLE giros.cuenta_bancaria DROP COLUMN divisa_id;
   END IF;
 END $$;
-

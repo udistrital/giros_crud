@@ -12,8 +12,8 @@ import (
 // CuentaBancaria ...
 type CuentaBancaria struct {
 	Id                int    `orm:"column(id);pk;auto"`
-	NombreCuenta      int    `orm:"column(nombre_cuenta)"`
-	NumeroCuenta      int    `orm:"column(numero_cuenta)"`
+	NombreCuenta      string `orm:"column(nombre_cuenta)"`
+	NumeroCuenta      int64  `orm:"column(numero_cuenta)"`
 	SucursalId        int    `orm:"column(sucursal_id)"`
 	TipoCuentaId      int    `orm:"column(tipo_cuenta_id)"`
 	Activo            bool   `orm:"column(activo)"`

@@ -1184,8 +1184,7 @@ definitions:
         type: integer
         format: int64
       NombreCuenta:
-        type: integer
-        format: int64
+        type: string
       NumeroCuenta:
         type: integer
         format: int64

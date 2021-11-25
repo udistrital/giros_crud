@@ -143,6 +143,7 @@ func UpdateCuentaBancariaById(m *CuentaBancaria) (err error) {
 	if err = o.Read(&v); err == nil {
 		var num int64
 		m.FechaCreacion = time_bogota.TiempoCorreccionFormato(v.FechaCreacion)
+		m.FechaModificacion = time_bogota.TiempoBogotaFormato()
 		if num, err = o.Update(m); err == nil {
 			fmt.Println("Number of records updated in database:", num)
 		}

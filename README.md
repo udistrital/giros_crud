@@ -95,9 +95,9 @@ Pruebas unitarias
 
 ## Estado CI
 
-| Develop | Release 0.3.1 | Master |
+| Develop | Release 0.3.2 | Master |
 | -- | -- | -- |
-| [![Build Status](https://hubci.portaloas.udistrital.edu.co/api/badges/udistrital/giros_crud/status.svg?ref=refs/heads/develop)](https://hubci.portaloas.udistrital.edu.co/udistrital/giros_crud) | [![Build Status](https://hubci.portaloas.udistrital.edu.co/api/badges/udistrital/giros_crud/status.svg?ref=refs/heads/release/0.3.1)](https://hubci.portaloas.udistrital.edu.co/udistrital/giros_crud) | [![Build Status](https://hubci.portaloas.udistrital.edu.co/api/badges/udistrital/giros_crud/status.svg?ref=refs/heads/master)](https://hubci.portaloas.udistrital.edu.co/udistrital/giros_crud) |
+| [![Build Status](https://hubci.portaloas.udistrital.edu.co/api/badges/udistrital/giros_crud/status.svg?ref=refs/heads/develop)](https://hubci.portaloas.udistrital.edu.co/udistrital/giros_crud) | [![Build Status](https://hubci.portaloas.udistrital.edu.co/api/badges/udistrital/giros_crud/status.svg?ref=refs/heads/release/0.3.2)](https://hubci.portaloas.udistrital.edu.co/udistrital/giros_crud) | [![Build Status](https://hubci.portaloas.udistrital.edu.co/api/badges/udistrital/giros_crud/status.svg?ref=refs/heads/master)](https://hubci.portaloas.udistrital.edu.co/udistrital/giros_crud) |
 ## Licencia
 
 This file is part of giros_crud

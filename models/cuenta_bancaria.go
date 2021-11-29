@@ -40,6 +40,9 @@ func init() {
 // AddCuentaBancaria insert a new CuentaBancaria into database and returns
 // last inserted Id on success.
 func AddCuentaBancaria(m *CuentaBancaria) (id int64, err error) {
+	tiempo := time_bogota.TiempoBogotaFormato()
+	m.FechaCreacion = tiempo
+	m.FechaModificacion = tiempo
 	o := orm.NewOrm()
 	id, err = o.Insert(m)
 	return

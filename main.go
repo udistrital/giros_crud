@@ -1,14 +1,15 @@
 package main
 
 import (
-	"github.com/astaxie/beego/plugins/cors"
-	_ "github.com/udistrital/giros_crud/routers"
-	apistatus "github.com/udistrital/utils_oas/apiStatusLib"
-	"github.com/udistrital/utils_oas/customerror"
-
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
+	"github.com/astaxie/beego/plugins/cors"
 	_ "github.com/lib/pq"
+
+	_ "github.com/udistrital/giros_crud/routers"
+	apistatus "github.com/udistrital/utils_oas/apiStatusLib"
+	"github.com/udistrital/utils_oas/auditoria"
+	"github.com/udistrital/utils_oas/customerror"
 )
 
 func main() {
@@ -37,6 +38,7 @@ func main() {
 		ExposeHeaders:    []string{"Content-Length"},
 		AllowCredentials: true,
 	}))
+	auditoria.InitMiddleware()
 	beego.ErrorController(&customerror.CustomErrorController{})
 	apistatus.Init()
 	beego.Run()

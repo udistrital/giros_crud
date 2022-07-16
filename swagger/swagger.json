@@ -1754,7 +1754,14 @@
                 "Activo": {
                     "type": "boolean"
                 },
-                "BancoId": {
+                "AreaFuncional": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "CuatroPorMil": {
+                    "type": "boolean"
+                },
+                "DivisaId": {
                     "type": "integer",
                     "format": "int64"
                 },
@@ -1768,15 +1775,27 @@
                     "type": "integer",
                     "format": "int64"
                 },
-                "NombreId": {
-                    "type": "integer",
-                    "format": "int64"
+                "NombreCuenta": {
+                    "type": "string"
                 },
                 "NumeroCuenta": {
                     "type": "integer",
                     "format": "int64"
                 },
-                "TipoCuenta": {
+                "Pagadora": {
+                    "type": "boolean"
+                },
+                "Recaudadora": {
+                    "type": "boolean"
+                },
+                "RecursoId": {
+                    "type": "string"
+                },
+                "SucursalId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "TipoCuentaId": {
                     "type": "integer",
                     "format": "int64"
                 }

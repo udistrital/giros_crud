@@ -7,18 +7,25 @@ import (
 	"strings"
 
 	"github.com/astaxie/beego/orm"
+	"github.com/udistrital/utils_oas/time_bogota"
 )
 
 // CuentaBancaria ...
 type CuentaBancaria struct {
 	Id                int    `orm:"column(id);pk;auto"`
-	NombreId          int    `orm:"column(nombre_id)"`
-	NumeroCuenta      int    `orm:"column(numero_cuenta)"`
-	BancoId           int    `orm:"column(banco_id)"`
-	TipoCuenta        int    `orm:"column(tipo_cuenta)"`
+	NombreCuenta      string `orm:"column(nombre_cuenta)"`
+	NumeroCuenta      int64  `orm:"column(numero_cuenta)"`
+	SucursalId        int    `orm:"column(sucursal_id)"`
+	TipoCuentaId      int    `orm:"column(tipo_cuenta_id)"`
 	Activo            bool   `orm:"column(activo)"`
 	FechaCreacion     string `orm:"column(fecha_creacion);type(timestamp without time zone)"`
 	FechaModificacion string `orm:"column(fecha_modificacion);type(timestamp without time zone)"`
+	Pagadora		  bool   `orm:"column(pagadora)"`
+	Recaudadora		  bool   `orm:"column(recaudadora)"`
+	CuatroPorMil	  bool   `orm:"column(cuatro_por_mil)"`
+	RecursoId		  string `orm:"column(recurso_id)"`
+	AreaFuncional	  int	 `orm:"column(area_funcional)"`
+	DivisaId		  int	 `orm:"column(divisa_id)"`
 }
 
 // TableName ...
@@ -33,6 +40,9 @@ func init() {
 // AddCuentaBancaria insert a new CuentaBancaria into database and returns
 // last inserted Id on success.
 func AddCuentaBancaria(m *CuentaBancaria) (id int64, err error) {
+	tiempo := time_bogota.TiempoBogotaFormato()
+	m.FechaCreacion = tiempo
+	m.FechaModificacion = tiempo
 	o := orm.NewOrm()
 	id, err = o.Insert(m)
 	return
@@ -135,6 +145,8 @@ func UpdateCuentaBancariaById(m *CuentaBancaria) (err error) {
 	// ascertain id exists in the database
 	if err = o.Read(&v); err == nil {
 		var num int64
+		m.FechaCreacion = time_bogota.TiempoCorreccionFormato(v.FechaCreacion)
+		m.FechaModificacion = time_bogota.TiempoBogotaFormato()
 		if num, err = o.Update(m); err == nil {
 			fmt.Println("Number of records updated in database:", num)
 		}

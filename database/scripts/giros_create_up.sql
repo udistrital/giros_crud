@@ -2,7 +2,7 @@
 -- Last modification date: 2021-03-01 14:48:44.252
 
 CREATE SCHEMA IF NOT EXISTS giros;
-ALTER SCHEMA giros OWNER TO test;
+-- ALTER SCHEMA giros OWNER TO test;
 SET search_path TO pg_catalog,public,giros;
 
 -- tables
@@ -135,16 +135,16 @@ CREATE TABLE giros.retiro_beneficiario_giro (
     CONSTRAINT retiro_beneficiario_giro_pk PRIMARY KEY (id)
 );
 
-ALTER TABLE giros.cuenta_bancaria OWNER TO test;
-ALTER TABLE giros.forma_pago OWNER TO test;
-ALTER TABLE giros.giro_contabilizacion OWNER TO test;
-ALTER TABLE giros.giro_estado OWNER TO test;
-ALTER TABLE giros.giro_orden_pago_detalle OWNER TO test;
-ALTER TABLE giros.giro_reversar OWNER TO test;
-ALTER TABLE giros.giro OWNER TO test;
-ALTER TABLE giros.orden_devolucion_detalle OWNER TO test;
-ALTER TABLE giros.relacion_autorizacion_detalle OWNER TO test;
-ALTER TABLE giros.retiro_beneficiario_giro OWNER TO test;
+-- ALTER TABLE giros.cuenta_bancaria OWNER TO test;
+-- ALTER TABLE giros.forma_pago OWNER TO test;
+-- ALTER TABLE giros.giro_contabilizacion OWNER TO test;
+-- ALTER TABLE giros.giro_estado OWNER TO test;
+-- ALTER TABLE giros.giro_orden_pago_detalle OWNER TO test;
+-- ALTER TABLE giros.giro_reversar OWNER TO test;
+-- ALTER TABLE giros.giro OWNER TO test;
+-- ALTER TABLE giros.orden_devolucion_detalle OWNER TO test;
+-- ALTER TABLE giros.relacion_autorizacion_detalle OWNER TO test;
+-- ALTER TABLE giros.retiro_beneficiario_giro OWNER TO test;
 
 
 

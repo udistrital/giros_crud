@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.9.2" last-position="430,220" last-zoom="0.95" max-obj-count="12"
+	 default-schema="public" default-owner="postgres">
+<database name="new_database" is-template="false" allow-conns="true">
+</database>
+
+<schema name="public" layer="0" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<schema name="giros" layer="0" rect-visible="true" fill-color="#d5abfc">
+	<role name="postgres"/>
+</schema>
+
+<table name="giro" layer="0" collapse-mode="2" max-obj-count="14">
+	<schema name="giros"/>
+	<role name="postgres"/>
+	<position x="573.932" y="438.912"/>
+	<column name="id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="cuenta_bancaria_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="forma_pago_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="vigencia" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="area_funcional" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="tipo_documento_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="tipo_giro_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="numero_seleccion" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="valor_total" not-null="true">
+		<type name="numeric" length="10" precision="2"/>
+	</column>
+	<column name="activo" not-null="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="giro_pk" type="pk-constr" table="giros.giro">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="giro_contabilizacion" layer="0" collapse-mode="2" max-obj-count="9">
+	<schema name="giros"/>
+	<role name="postgres"/>
+	<position x="1209.35" y="142.105"/>
+	<column name="id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="giro_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="concepto" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="codigo" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="tipo_comprobante" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="activo" not-null="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="giro_contabilizacion_pk" type="pk-constr" table="giros.giro_contabilizacion">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="relacion_autorizacion_detalle" layer="0" collapse-mode="2" max-obj-count="8">
+	<schema name="giros"/>
+	<role name="postgres"/>
+	<position x="1178.45" y="361.328"/>
+	<column name="id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="giro_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="vigencia" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="relacion_autorizacion_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="activo" not-null="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="relacion_autorizacion_detalle_pk" type="pk-constr" table="giros.relacion_autorizacion_detalle">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="orden_devolucion_detalle" layer="0" collapse-mode="2" max-obj-count="8">
+	<schema name="giros"/>
+	<role name="postgres"/>
+	<position x="1206.32" y="608.916"/>
+	<column name="id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="giro_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="vigencia" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="orden_devolucion_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="activo" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="orden_devolucion_detalle_pk" type="pk-constr" table="giros.orden_devolucion_detalle">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="giro_orden_pago_detalle" layer="0" collapse-mode="2" max-obj-count="8">
+	<schema name="giros"/>
+	<role name="postgres"/>
+	<position x="1218.95" y="859.442"/>
+	<column name="id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="giro_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="vigencia" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="orden_pago_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="activo" not-null="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="giro_orden_pago_detalle_pk" type="pk-constr" table="giros.giro_orden_pago_detalle">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="giro_estado" layer="0" collapse-mode="2" max-obj-count="9">
+	<schema name="giros"/>
+	<role name="postgres"/>
+	<position x="1233.68" y="1099.44"/>
+	<column name="id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="giro_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="estado_giro_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="responsable" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="observaciones" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="activo" not-null="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="giro_estado_pk" type="pk-constr" table="giros.giro_estado">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="giro_reversar" layer="0" collapse-mode="2" max-obj-count="8">
+	<schema name="giros"/>
+	<role name="postgres"/>
+	<position x="16.8421" y="174.179"/>
+	<column name="id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="giro_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="responsable" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="observaciones" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="activo" not-null="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="giro_reversar_pk" type="pk-constr" table="giros.giro_reversar">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="retiro_beneficiario_giro" layer="0" collapse-mode="2" max-obj-count="10">
+	<schema name="giros"/>
+	<role name="postgres"/>
+	<position x="9.47368" y="381.548"/>
+	<column name="id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="giro_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="consecutivo" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="tipo_documento_beneficiario" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="documento_beneficiario" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="observaciones" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="activo" not-null="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="retiro_beneficiario_giro_pk" type="pk-constr" table="giros.retiro_beneficiario_giro">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="cuenta_bancaria" layer="0" collapse-mode="2" max-obj-count="16">
+	<schema name="giros"/>
+	<role name="postgres"/>
+	<position x="13.6842" y="619.442"/>
+	<column name="id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="nombre_cuenta" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="numero_cuenta" not-null="true">
+		<type name="numeric" length="0"/>
+	</column>
+	<column name="sucursal_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="tipo_cuenta_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="pagadora" not-null="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="recaudadora" not-null="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="cuatro_por_mil" not-null="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="recurso_id" not-null="true">
+		<type name="character varying" length="0"/>
+	</column>
+	<column name="area_funcional" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="divisa_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="activo" not-null="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="cuenta_bancaria_pk" type="pk-constr" table="giros.cuenta_bancaria">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="forma_pago" layer="0" collapse-mode="2" max-obj-count="7">
+	<schema name="giros"/>
+	<role name="postgres"/>
+	<position x="11.5789" y="1086.81"/>
+	<column name="id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="numero_orden" not-null="true">
+		<type name="numeric" length="5" precision="2"/>
+	</column>
+	<column name="forma_pago_id" not-null="true">
+		<type name="integer" length="0"/>
+	</column>
+	<column name="activo" not-null="true">
+		<type name="boolean" length="0"/>
+	</column>
+	<column name="fecha_creacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<column name="fecha_modificacion" not-null="true">
+		<type name="timestamp" length="0"/>
+	</column>
+	<constraint name="forma_pago_pk" type="pk-constr" table="giros.forma_pago">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<textbox name="sucursal_id" layer="0" font-size="9">
+	<position x="13.6842" y="922.105"/>
+	<comment><![CDATA[sucursal_id referencia a terceros_crud, tabla info_complementaria_tercero]]></comment>
+</textbox>
+
+<textbox name="tipo_cuenta_id" layer="0" font-size="9">
+	<position x="15.7895" y="954.737"/>
+	<comment><![CDATA[Tabla_parametrica_tipo_cuenta_id]]></comment>
+</textbox>
+
+<textbox name="recurso_id" layer="0" font-size="9">
+	<position x="12.6316" y="992.632"/>
+	<comment><![CDATA[recurso_id referencia a plan_cuentas_mongo_crud, tabla arbol_rubro]]></comment>
+</textbox>
+
+<textbox name="divisa_id" layer="0" font-size="9">
+	<position x="12.6316" y="1032.63"/>
+	<comment><![CDATA[Tabla_parametrica_divisa_id
+]]></comment>
+</textbox>
+
+<textbox name="forma_pago_id" layer="0" font-size="9">
+	<position x="12.6316" y="1263.16"/>
+	<comment><![CDATA[Tabla_parametrica_forma_pago_id]]></comment>
+</textbox>
+
+<textbox name="relacion_autorizacion_id" layer="0" font-size="9">
+	<position x="1124.21" y="569.474"/>
+	<comment><![CDATA[relacion_autorizacion_id se obtiene del sistema central de cuentas]]></comment>
+</textbox>
+
+<textbox name="orden_devolucion_id" layer="0" font-size="9">
+	<position x="1149.47" y="810.526"/>
+	<comment><![CDATA[orden_devolucion_id se obtiene del sistema central de cuentas
+]]></comment>
+</textbox>
+
+<textbox name="orden_pago_id" layer="0" font-size="9">
+	<position x="1186.32" y="1064.21"/>
+	<comment><![CDATA[orden_pago_id se obtiene del sistema central de cuentas]]></comment>
+</textbox>
+
+<constraint name="giro_cuenta_bancaria" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="giros.cuenta_bancaria" table="giros.giro">
+	<columns names="cuenta_bancaria_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="giro_forma_pago" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="giros.forma_pago" table="giros.giro">
+	<columns names="forma_pago_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="contabilizacion_giro_giro" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="giros.giro" table="giros.giro_contabilizacion">
+	<columns names="giro_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="relacion_autorizacion_detalle_giro" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="giros.giro" table="giros.relacion_autorizacion_detalle">
+	<columns names="giro_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="orden_devolucion_detalle_giro" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="giros.giro" table="giros.orden_devolucion_detalle">
+	<columns names="giro_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="giro_orden_pago_detalle_giro" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="giros.giro" table="giros.giro_orden_pago_detalle">
+	<columns names="giro_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="giro_estado_giro" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="giros.giro" table="giros.giro_estado">
+	<columns names="giro_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="giro_reversar_giro" type="fk-constr" comparison-type="MATCH SIMPLE"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="giros.giro" table="giros.giro_reversar">
+	<columns names="giro_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="retiro_beneficiario_giro_giro" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="giros.giro" table="giros.retiro_beneficiario_giro">
+	<columns names="giro_id" ref-type="src-columns"/>
+	<columns names="id" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="rel_giro_contabilizacion_giro" type="relfk" layer="0"
+	 src-table="giros.giro_contabilizacion"
+	 dst-table="giros.giro" reference-fk="contabilizacion_giro_giro"
+	 src-required="false" dst-required="false">
+	<label ref-type="src-label">
+		<position x="0" y="0"/>
+	</label>
+	<label ref-type="name-label">
+		<position x="0" y="0"/>
+	</label>
+</relationship>
+
+<relationship name="rel_relacion_autorizacion_detalle_giro" type="relfk" layer="0"
+	 src-table="giros.relacion_autorizacion_detalle"
+	 dst-table="giros.giro" reference-fk="relacion_autorizacion_detalle_giro"
+	 src-required="false" dst-required="false">
+	<label ref-type="src-label">
+		<position x="0" y="0"/>
+	</label>
+	<label ref-type="name-label">
+		<position x="3.94553" y="-6.05728"/>
+	</label>
+</relationship>
+
+<relationship name="rel_orden_devolucion_detalle_giro" type="relfk" layer="0"
+	 src-table="giros.orden_devolucion_detalle"
+	 dst-table="giros.giro" reference-fk="orden_devolucion_detalle_giro"
+	 src-required="false" dst-required="false">
+	<label ref-type="name-label">
+		<position x="0" y="0"/>
+	</label>
+</relationship>
+
+<relationship name="rel_giro_orden_pago_detalle_giro" type="relfk" layer="0"
+	 src-table="giros.giro_orden_pago_detalle"
+	 dst-table="giros.giro" reference-fk="giro_orden_pago_detalle_giro"
+	 src-required="false" dst-required="false">
+	<label ref-type="src-label">
+		<position x="0" y="0"/>
+	</label>
+	<label ref-type="name-label">
+		<position x="0" y="0"/>
+	</label>
+</relationship>
+
+<relationship name="rel_giro_estado_giro" type="relfk" layer="0"
+	 src-table="giros.giro_estado"
+	 dst-table="giros.giro" reference-fk="giro_estado_giro"
+	 src-required="false" dst-required="false">
+	<label ref-type="dst-label">
+		<position x="0" y="0"/>
+	</label>
+	<label ref-type="name-label">
+		<position x="4.79459" y="-12.0092"/>
+	</label>
+</relationship>
+
+<relationship name="rel_giro_reversar_giro" type="relfk" layer="0"
+	 src-table="giros.giro_reversar"
+	 dst-table="giros.giro" reference-fk="giro_reversar_giro"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_retiro_beneficiario_giro_giro" type="relfk" layer="0"
+	 src-table="giros.retiro_beneficiario_giro"
+	 dst-table="giros.giro" reference-fk="retiro_beneficiario_giro_giro"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_giro_cuenta_bancaria" type="relfk" layer="0"
+	 src-table="giros.giro"
+	 dst-table="giros.cuenta_bancaria" reference-fk="giro_cuenta_bancaria"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_giro_forma_pago" type="relfk" layer="0"
+	 src-table="giros.giro"
+	 dst-table="giros.forma_pago" reference-fk="giro_forma_pago"
+	 src-required="false" dst-required="false"/>
+
+</dbmodel>

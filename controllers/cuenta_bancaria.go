@@ -134,7 +134,7 @@ func (c *CuentaBancariaController) GetAll() {
 		c.Abort("404")
 	} else {
 		if l == nil {
-			l = []map[string]interface{}{}
+			l = []interface{}{}
 		}
 		c.Data["json"] = map[string]interface{}{"Success": true, "Status": "200", "Message": "Request successful", "Data": l}
 	}

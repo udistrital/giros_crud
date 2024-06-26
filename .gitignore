@@ -18,3 +18,6 @@ swagger/**
 !swagger/swagger.json
 !swagger/swagger.yml
 swagger.zip
+
+go.mod
+go.sum
